@@ -40,3 +40,43 @@
   - 커뮤니티가 덜 활성화되어 있음
   - 서비스 연동 지원이 비교적 적고 문서화가 부족함
   - Firebase에 비해 러닝 커브가 높음
+
+## ⭐ Supabase 주요 기능
+
+### Table Editor
+
+> Enable Row Level Security (RLS)
+
+- Supabase에 내장된 RDB인 PostgreSQL의 유저별/테이블별 권한 관리 기능의 활성화 여부를 관리하는 체크 박스
+
+### SQL Editor
+
+- DB에 직접 적용 가능한 SQL문을 작성할 수 있다.
+- Assistant 기능을 사용하여 Copliot처럼 코드 지원을 받을 수 있다.
+
+### Database
+
+- 전반적인 DB 관련 기능을 사용할 수 있다.
+- function이나 update/delete 등에 대한 trigger을 설정할 수 있다.
+- 접근 권한에 대한 설정이 가능하다.
+- backup, migration, webhooks 등을 설정하는 것도 가능하다.
+- schema vizualizer로 테이블 간 관계를 도식화하여 볼 수 있다.
+- Query Performance를 통해 성능 tracking이 가능하다.
+
+### Authentication
+
+- 로그인, 사용자 관리 등을 할 수 있다.
+- 사용자 별 정책 관리가 가능하다.
+- 소셜 로그인에 용이한 provider 관련 기능을 제공한다.
+
+### Storage
+
+- S3처럼 버킷 생성 후 파일 조회, 업로드 등이 가능하다.
+
+### Edge Functions
+
+- AWS Lamba처럼 Serverless Function을 사용할 수 있다.
+
+### Realtime
+
+- 실시간으로 사용되고 있는 채널에 대한 모니터링이 가능하다.

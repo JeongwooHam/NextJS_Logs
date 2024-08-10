@@ -1,5 +1,39 @@
 ## 🌱 TodoList with Supabase
 
+### ⭐ Supabase와 Next.js 프로젝트 연동하기
+
+> 1. 환경 변수 파일 설정하기
+
+```shell
+# Home > Project API > Project URL
+NEXT_PUBLIC_SUPABASE_URL= ''
+# Home > Project API > API Key
+NEXT_PUBLIC_SUPABASE_ANON_KEY= ''
+# Project Settings > API Settings > Project API keys > service_role
+NEXT_SUPABASE_SERVICE_ROLE= ''
+# Supabase DB Password
+NEXT_SUPABASE_DB_PASSWORD= ''
+```
+
+> 2. supabase CLI 설치 및 로그인 진행
+
+```shell
+npx supabase login
+```
+
+> 3. package.json 파일에 script 추가하기
+
+```json
+"scripts": {
+  // ...
+  "generate-types": "npx supabase gen types typescript --project-id [project_id] --schema public > types_db.ts"
+}
+```
+
+- Supabase에서 지원하는 각 언어별 타입 생성 기능을 적용하기 위한 스크립트이다.
+  - 특정 id 값을 가지는 supabase 프로젝트의 public schema를 가져와 `types_db.ts` 파일로 생성하게 한다.
+- `project_id` 값은 환경변수로 설정한 `NEXT_PUBLIC_SUPABASE_URL` 값에서 `https://`와 `.supabase.co` 사이의 값을 넣어주면 된다.
+
 ### ⚠️ Error Logs
 
 > material-tailwind react missing props

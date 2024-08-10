@@ -1,5 +1,5 @@
-import { MOCK_TODO } from "../constants/mockTodo";
-import OneTodo from "./OneTodo";
+import { MOCK_TODO } from "@/constants/mockTodo";
+import OneTodo from "@/components/OneTodo";
 
 export default function TodoList() {
   return (

@@ -1,8 +1,8 @@
 "use client";
 
 import { Checkbox } from "@material-tailwind/react";
-import { Todo } from "../constants/mockTodo";
-import CustomIconButton from "./CustomIconButton";
+import { Todo } from "@/constants/mockTodo";
+import CustomIconButton from "@/components/CustomIconButton";
 import { ChangeEvent, useState } from "react";
 
 type TodoProps = {

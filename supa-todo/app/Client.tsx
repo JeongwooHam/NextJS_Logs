@@ -1,6 +1,6 @@
 "use client";
 
-import TodoList from "@/app/components/TodoList";
+import TodoList from "@/components/TodoList";
 import { Input } from "@material-tailwind/react";
 
 export default function Client() {

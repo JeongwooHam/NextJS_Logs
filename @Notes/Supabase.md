@@ -1,6 +1,6 @@
-# 🦕 왜 Supabase일까요?
+## 🦕 왜 Supabase일까요?
 
-## 🔥 Firebase
+### 🔥 Firebase
 
 - BaaS (Backend as a Service)
 
@@ -22,7 +22,7 @@
   - 사용자가 많아진 경우 비용이 많이 듦
   - 웹 개발에는 최적화 되어 있지 않음
 
-## ⚡ Supabase
+### ⚡ Supabase
 
 > Build in a weekend. Scale to millions.
 

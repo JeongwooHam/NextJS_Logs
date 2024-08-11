@@ -4,9 +4,10 @@ import { Checkbox } from "@material-tailwind/react";
 import { Todo } from "@/constants/mockTodo";
 import CustomIconButton from "@/components/CustomIconButton";
 import { ChangeEvent, useState } from "react";
+import { TodoRow } from "@/actions/todo";
 
 type TodoProps = {
-  oneTodo: Todo;
+  oneTodo: TodoRow;
 };
 
 export default function OneTodo({ oneTodo }: TodoProps) {

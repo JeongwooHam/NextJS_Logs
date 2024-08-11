@@ -1,9 +1,19 @@
 "use client";
 
 import TodoList from "@/components/TodoList";
-import { Input } from "@material-tailwind/react";
+import useTodo from "@/hooks/useTodo";
+import { Button, Input } from "@material-tailwind/react";
 
 export default function Client() {
+  const {
+    searchInput,
+    setSearchInput,
+    todoList,
+    isGetTodoListLoading,
+    createTodo,
+    isCreateTodoPending,
+  } = useTodo();
+
   return (
     <div className='w-3/4 mx-auto flex flex-col items-center py-10 gap-4'>
       <h1 className='text-lg font-extrabold'>🌱 TODO LIST</h1>
@@ -11,8 +21,17 @@ export default function Client() {
         label='할 일 찾기'
         placeholder='계획한 할 일을 찾아보세요:)'
         icon={<i className='fas fa-search text-black' />}
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)}
       />
-      <TodoList />
+      <TodoList todoList={todoList} isLoading={isGetTodoListLoading} />
+      <Button
+        className='mt-5'
+        onClick={() => createTodo()}
+        loading={isCreateTodoPending}
+      >
+        + ADD TODO
+      </Button>
     </div>
   );
 }

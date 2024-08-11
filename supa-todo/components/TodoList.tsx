@@ -1,10 +1,17 @@
-import { MOCK_TODO } from "@/constants/mockTodo";
 import OneTodo from "@/components/OneTodo";
+import { TodoRow } from "@/actions/todo";
 
-export default function TodoList() {
+type Props = {
+  todoList: TodoRow[];
+  isLoading: boolean;
+};
+
+export default function TodoList({ todoList, isLoading }: Props) {
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <div className='w-full'>
-      {MOCK_TODO.map((todo) => (
+      {todoList.map((todo) => (
         <OneTodo oneTodo={todo} key={todo.id} />
       ))}
     </div>

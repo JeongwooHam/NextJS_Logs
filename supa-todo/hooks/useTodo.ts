@@ -1,7 +1,8 @@
 import { createTodo, getTodos } from "@/actions/todo";
+import { queryClient } from "@/config/QueryClientProvider";
 import { QUERY_KEY } from "@/constants/queryKey";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function useTodo() {
   const [searchInput, setSearchInput] = useState("");
@@ -18,12 +19,20 @@ export default function useTodo() {
     },
   });
 
+  const searchTodo = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    queryClient.invalidateQueries({ queryKey: [QUERY_KEY.TODO] });
+    refetch();
+  };
+
   return {
+    refetch,
     searchInput,
     setSearchInput,
     todoList: data,
     isGetTodoListLoading: isLoading,
     createTodo: mutate,
     isCreateTodoPending: isPending,
+    searchTodo,
   };
 }

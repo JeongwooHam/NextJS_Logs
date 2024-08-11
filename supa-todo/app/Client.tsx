@@ -12,18 +12,21 @@ export default function Client() {
     isGetTodoListLoading,
     createTodo,
     isCreateTodoPending,
+    searchTodo,
   } = useTodo();
 
   return (
     <div className='w-3/4 mx-auto flex flex-col items-center py-10 gap-4'>
       <h1 className='text-lg font-extrabold'>🌱 TODO LIST</h1>
-      <Input
-        label='할 일 찾기'
-        placeholder='계획한 할 일을 찾아보세요:)'
-        icon={<i className='fas fa-search text-black' />}
-        value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
-      />
+      <form onSubmit={(e) => searchTodo(e)} className='w-full'>
+        <Input
+          label='할 일 찾기'
+          placeholder='계획한 할 일을 찾아보세요:)'
+          icon={<i className='fas fa-search text-black' />}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+      </form>
       <TodoList todoList={todoList} isLoading={isGetTodoListLoading} />
       <Button
         className='mt-5'
